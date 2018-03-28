@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsPackable>true</IsPackable>
+    <PackAsTool>true</PackAsTool>
+    <AssemblyName>dotnet-tinify</AssemblyName>
+    <Description>A simple tool for squashing PNG and JPEG files using the TinyPNG API</Description>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="2.2.0-beta" />
+    <PackageReference Include="Humanizer.Core" Version="2.2.0" />
+    <PackageReference Include="Tinify" Version="1.5.2" />
+  </ItemGroup>
+
+</Project>
