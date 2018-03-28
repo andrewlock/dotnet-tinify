@@ -1,16 +1,16 @@
 dotnet-tinify
 ============
 
-<!-- [![AppVeyor build status][appveyor-badge]](https://ci.appveyor.com/project/andrewlock/dotnet-tinify/branch/master) -->
+[![AppVeyor build status][appveyor-badge]](https://ci.appveyor.com/project/andrewlock/dotnet-tinify/branch/master)
 
-<!-- [appveyor-badge]: https://img.shields.io/appveyor/ci/andrewlock/dotnet-tinify/master.svg?label=appveyor&style=flat-square -->
+[appveyor-badge]: https://img.shields.io/appveyor/ci/andrewlock/dotnet-tinify/master.svg?label=appveyor&style=flat-square
 
-<!-- [![NuGet][main-nuget-badge]][main-nuget] [![MyGet][main-myget-badge]][main-myget] -->
+[![NuGet][main-nuget-badge]][main-nuget] [![MyGet][main-myget-badge]][main-myget]
 
 [main-nuget]: https://www.nuget.org/packages/dotnet-tinify/
 [main-nuget-badge]: https://img.shields.io/nuget/v/dotnet-tinify.svg?style=flat-square&label=nuget
-<!-- [main-myget]: https://www.myget.org/feed/andrewlock-ci/package/nuget/dotnet-tinify -->
-<!-- [main-myget-badge]: https://img.shields.io/www.myget/andrewlock-ci/vpre/dotnet-tinify.svg?style=flat-square&label=myget -->
+[main-myget]: https://www.myget.org/feed/andrewlock-ci/package/nuget/dotnet-tinify
+[main-myget-badge]: https://img.shields.io/www.myget/andrewlock-ci/vpre/dotnet-tinify.svg?style=flat-square&label=myget
 
 A simple tool for squashing PNG and JPEG files using the [TinyPNG API](https://tinypng.com/).
 
