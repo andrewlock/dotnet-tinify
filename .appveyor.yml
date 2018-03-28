@@ -28,13 +28,14 @@ deploy:
     server: https://www.myget.org/F/andrewlock-ci/api/v2/package
     symbol_server: https://www.myget.org/F/andrewlock-ci/api/v2/package
     api_key:
-      secure: KF1yGk4IHJyyfiHfFSCxJ+p5iZX+KPfCTnCihjD5iIZjasTS1lHeilpbaon4wvcM
+      secure: 7XbdNq38u0JLRNc9pRl35WPi5LZopfYcoCslf7Er/eTreR5mZnGbmY/lVQYcgxI2
     on:
       branch: master
   - provider: NuGet
     name: production
+    artifact: Packages
     api_key:
-      secure: nyE3SEqDxSkHrLGAQJBMh2Oo6deEnWCEKoHCVafYuUB7NwjOUwDi3jXQItElcp2h
+      secure: AAQlUu8bTe6OQSqOd8Uv143vSYoNix3/LhWmt8nulSUxfpbAUtmdUcZpvD2f9Owa
     on:
       branch: master
       appveyor_repo_tag: true
