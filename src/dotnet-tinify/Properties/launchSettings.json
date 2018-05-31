@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "dotnet-tinify": {
+      "commandName": "Project",
+      "commandLineArgs": "--help"
+    }
+  }
+}
