@@ -18,7 +18,7 @@ Can compress all the PNG or JPEG files in a directory or just single files.
 
 ## Installation
 
-The latest release of dotnet-tinify requires the [2.1.300-preview1](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview1) .NET Core SDK or newer.
+The latest release of dotnet-tinify requires the [2.1.300](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300) .NET Core 2.1 SDK or newer.
 Once installed, run this command:
 
 ```
