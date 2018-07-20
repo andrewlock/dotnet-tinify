@@ -22,7 +22,7 @@ The latest release of dotnet-tinify requires the [2.1.300](https://www.microsoft
 Once installed, run this command:
 
 ```
-dotnet install tool --global dotnet-tinify
+dotnet tool install --global dotnet-tinify
 ```
 
 ## Usage
