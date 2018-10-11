@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Threading.Tasks;
 using TinifyAPI;
-using SysException = System.Exception;
 
 namespace ImageOptimiser
 {
@@ -32,8 +31,8 @@ namespace ImageOptimiser
                 return Program.ERROR;
             }
 
-            var optimiser = new ImageOptimiser(console);
-            await optimiser.OptimiseFileAsync(GetFilesToSquash(console, Path));
+            var squasher = new ImageSquasher(console);
+            await squasher.SquashFileAsync(GetFilesToSquash(console, Path));
 
             console.WriteLine($"Compression complete.");
             console.WriteLine($"{Tinify.CompressionCount} compressions this month");
@@ -60,7 +59,7 @@ namespace ImageOptimiser
                 console.WriteLine("TinyPng API Key verified");
                 return true;
             }
-            catch (SysException ex)
+            catch (System.Exception ex)
             {
                 console.Error.WriteLine("Validation of TinyPng API key failed.");
                 console.Error.WriteLine(ex);
