@@ -17,8 +17,7 @@ namespace ImageOptimiser
 
         public async Task SquashFileAsync(IEnumerable<string> filesToSquash)
         {
-            if (filesToSquash is null) throw new ArgumentNullException(nameof(filesToSquash));
-            if (!filesToSquash.Any()) throw new ArgumentException("There are no files to squash.", nameof(filesToSquash));
+            if (filesToSquash is null) throw new ArgumentNullException(nameof(filesToSquash));            
 
             var compressFileTasks = filesToSquash
                 .Where(file => Constants.SupportedExtensions.Contains(Path.GetExtension(file)))
