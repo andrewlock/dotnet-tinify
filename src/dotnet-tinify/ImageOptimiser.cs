@@ -1,34 +1,32 @@
 ﻿using Humanizer;
 using McMaster.Extensions.CommandLineUtils;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using TinifyAPI;
+using SysException = System.Exception;
 
 namespace ImageOptimiser
 {
-    public class ImageSquasher
-    {
-        public IEnumerable<string> FilesToSquash { get; }
+    public class ImageOptimiser
+    {        
         public IConsole Console { get; }
 
-        public ImageSquasher(IEnumerable<string> filesToSquash, IConsole console)
-        {
-            FilesToSquash = filesToSquash;
-            Console = console;
-        }
+        public ImageOptimiser(IConsole console) => Console = console;
 
-        public async Task SquashFiles()
+        public async Task OptimiseFileAsync(string[] filesToSquash)
         {
-            var compressFileTasks = FilesToSquash
-                .Where(file => Constants.SupportedExtensions.Contains(Path.GetExtension(file)))
-                .Select(file => CompressFile(file));
+            if (filesToSquash?.Length > 0)
+            {
+                var compressFileTasks = filesToSquash
+                    .Where(file => Constants.SupportedExtensions.Contains(Path.GetExtension(file)))
+                    .Select(file => CompressFileAsync(file));
 
-            await Task.WhenAll(compressFileTasks);
+                await Task.WhenAll(compressFileTasks);
+            }            
         }
         
-        async Task CompressFile(string file)
+        async Task CompressFileAsync(string file)
         {
             try
             {
@@ -44,7 +42,7 @@ namespace ImageOptimiser
 
                 Console.WriteLine($"Compression complete. {Path.GetFileName(file)} was {originalSizeInBytes.Bytes()}, now {newSizeInBytes.Bytes()} (-{percentChange:0}%)");
             }
-            catch (System.Exception ex)
+            catch (SysException ex)
             {
                 Console.WriteLine($"An error occurred compressing {Path.GetFileName(file)}: ");
                 Console.WriteLine(ex);

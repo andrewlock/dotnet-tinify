@@ -7,6 +7,7 @@
     <AssemblyName>dotnet-tinify</AssemblyName>
     <Description>A simple tool for squashing PNG and JPEG files using the TinyPNG API</Description>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
