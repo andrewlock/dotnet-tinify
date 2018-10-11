@@ -1,5 +1,6 @@
 ﻿using Humanizer;
 using McMaster.Extensions.CommandLineUtils;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,26 +10,23 @@ using TinifyAPI;
 namespace ImageOptimiser
 {
     public class ImageSquasher
-    {
-        public IEnumerable<string> FilesToSquash { get; }
+    {        
         public IConsole Console { get; }
 
-        public ImageSquasher(IEnumerable<string> filesToSquash, IConsole console)
-        {
-            FilesToSquash = filesToSquash;
-            Console = console;
-        }
+        public ImageSquasher(IConsole console) => Console = console;
 
-        public async Task SquashFiles()
+        public async Task SquashFileAsync(IEnumerable<string> filesToSquash)
         {
-            var compressFileTasks = FilesToSquash
+            if (filesToSquash is null) throw new ArgumentNullException(nameof(filesToSquash));            
+
+            var compressFileTasks = filesToSquash
                 .Where(file => Constants.SupportedExtensions.Contains(Path.GetExtension(file)))
-                .Select(file => CompressFile(file));
+                .Select(file => CompressFileAsync(file));
 
             await Task.WhenAll(compressFileTasks);
         }
         
-        async Task CompressFile(string file)
+        async Task CompressFileAsync(string file)
         {
             try
             {

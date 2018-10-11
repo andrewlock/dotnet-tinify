@@ -15,12 +15,12 @@ namespace ImageOptimiser
         {
             try
             {
-                return await CommandLineApplication.ExecuteAsync<Tinifier>(args);
+                return await CommandLineApplication.ExecuteAsync<ImageResizer>(args);
             }
             catch (Exception ex)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Error.WriteLine("Unexpected error: " + ex.ToString());
+                Console.Error.WriteLine($"Unexpected error: {ex}");
                 Console.ResetColor();
                 return EXCEPTION;
             }
